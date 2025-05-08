@@ -32,9 +32,13 @@
 *.app
 
 # Build files
-/build/
 /bin/
 /lib/
+**/build/
+**/install/
+**/log/
+
+
 
 # VS Code
 /.vscode/
