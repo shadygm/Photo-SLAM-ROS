@@ -1,0 +1,6 @@
+setup.py
+gaussian_interface/__init__.py
+gaussian_interface.egg-info/PKG-INFO
+gaussian_interface.egg-info/SOURCES.txt
+gaussian_interface.egg-info/dependency_links.txt
+gaussian_interface.egg-info/top_level.txt

@@ -1,0 +1,1 @@
+/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros/ament_cmake_core/photo-slam-rosConfig-version.cmake

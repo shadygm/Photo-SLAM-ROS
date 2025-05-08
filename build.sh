@@ -1,44 +1,28 @@
-# DBoW2
-cd ./ORB-SLAM3/Thirdparty/DBoW2
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release # add OpenCV_DIR definitions if needed, example:
-#cmake .. -DCMAKE_BUILD_TYPE=Release -DOpenCV_DIR=/home/rapidlab/libs/opencv/lib/cmake/opencv4
-make -j
+#!/bin/bash
 
-cd ../../g2o
+echo "========== ROS 2 Build: Photo-SLAM-ROS =========="
 
-# g2o
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j
+# Ask for build type
+read -p "Enter CMAKE_BUILD_TYPE (default: Release): " build_type
+build_type=${build_type:-Release}
 
-cd ../../Sophus
+# Ask for extra colcon arguments
+read -p "Enter extra colcon build args (e.g. --parallel-workers 8): " extra_args
 
-# Sophus
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j
+# Confirm
+echo ">>> Building with type: $build_type"
+echo ">>> Extra colcon args: $extra_args"
 
-# ORB_SLAM3
-cd ../../../Vocabulary
-echo "Uncompress vocabulary ..."
-tar -xf ORBvoc.txt.tar.gz
-cd ..
+# Clean old build if requested
+read -p "Clean build directory before building? (y/N): " clean
+if [[ "$clean" == "y" || "$clean" == "Y" ]]; then
+    rm -rf build install log
+    echo ">>> Cleaned build/install/log folders"
+fi
 
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release # add OpenCV_DIR definitions if needed, example:
-#cmake .. -DCMAKE_BUILD_TYPE=Release -DOpenCV_DIR=/home/rapidlab/libs/opencv/lib/cmake/opencv4
-make -j8
+# Build
+colcon build --symlink-install \
+    --cmake-args -DCMAKE_BUILD_TYPE=$build_type \
+    $extra_args
 
-# Photo-SLAM
-echo "Building Photo-SLAM ..."
-cd ../..
-mkdir build
-cd build
-cmake .. # add Torch_DIR and/or OpenCV_DIR definitions if needed, example:
-#cmake .. -DTorch_DIR=/home/rapidlab/libs/libtorch/share/cmake/Torch -DOpenCV_DIR=/home/rapidlab/libs/opencv/lib/cmake/opencv4
-make -j8
+echo "========== Build Complete =========="

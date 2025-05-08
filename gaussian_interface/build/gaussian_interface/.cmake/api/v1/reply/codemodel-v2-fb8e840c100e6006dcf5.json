@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-56d842d4b70d5e0b91af.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "gaussian_interface__py",
+					"jsonFile" : "directory-gaussian_interface__py-4d09d98d78197999be74.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "build/gaussian_interface/gaussian_interface__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "gaussian_interface",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_gaussian_interface_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_gaussian_interface_egg-4f336815efd25beea993.json",
+					"name" : "ament_cmake_python_build_gaussian_interface_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_gaussian_interface::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_gaussian_interface-ef0e84c34a312ea58861.json",
+					"name" : "ament_cmake_python_copy_gaussian_interface",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface-94572e5aff38db666feb.json",
+					"name" : "gaussian_interface",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__cpp-289860bb204ef0996d19.json",
+					"name" : "gaussian_interface__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gaussian_interface__py::@5ed9201d9a500300b221",
+					"jsonFile" : "target-gaussian_interface__py-adf01250ccb893adf552.json",
+					"name" : "gaussian_interface__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_generator_c-b5d71f806f09f106fdc0.json",
+					"name" : "gaussian_interface__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_generator_py-4ae131eb525d16b9c982.json",
+					"name" : "gaussian_interface__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_c-e00e6f57e6c159d6fe55.json",
+					"name" : "gaussian_interface__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_c__pyext-e040ecbbf41cb6256911.json",
+					"name" : "gaussian_interface__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_cpp-84f4f5202a272c9e231d.json",
+					"name" : "gaussian_interface__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_fastrtps_c-5003ee825962641f576a.json",
+					"name" : "gaussian_interface__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_fastrtps_c__pyext-b8c12501aaad15d7958c.json",
+					"name" : "gaussian_interface__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_fastrtps_cpp-4a954f20673670a1edc7.json",
+					"name" : "gaussian_interface__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_introspection_c-52da3641773acbf25a54.json",
+					"name" : "gaussian_interface__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_introspection_c__pyext-a6cc6abcb929c1acdac9.json",
+					"name" : "gaussian_interface__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface__rosidl_typesupport_introspection_cpp-46d665720de0591b568e.json",
+					"name" : "gaussian_interface__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_interface_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_interface_uninstall-6a02de7816543dac8465.json",
+					"name" : "gaussian_interface_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-1cbc436d0a5d24184d19.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/build/gaussian_interface",
+		"source" : "/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

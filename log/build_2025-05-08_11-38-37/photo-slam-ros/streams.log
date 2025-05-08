@@ -1,0 +1,53 @@
+[0.012s] Invoking command in '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros -- -j16 -l16
+[0.040s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.141s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.148s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.173s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.175s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.180s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.188s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.198s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.226s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.227s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.336s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.376s] -- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.399s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[0.406s] -- Found CUDA: /usr/local/cuda (found suitable exact version "11.8") 
+[0.414s] -- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.488s] -- Found CUDA: /usr/local/cuda (found version "11.8") 
+[0.488s] -- Caffe2: CUDA detected: 11.8
+[0.488s] -- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+[0.488s] -- Caffe2: CUDA toolkit directory: /usr/local/cuda
+[0.593s] -- Caffe2: Header version is: 11.8
+[0.602s] [33mCMake Warning at /libtorch/share/cmake/Caffe2/public/cuda.cmake:166 (message):
+[0.602s]   Failed to compute shorthash for libnvrtc.so
+[0.602s] Call Stack (most recent call first):
+[0.602s]   /libtorch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)
+[0.602s]   /libtorch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+[0.602s]   CMakeLists.txt:24 (find_package)
+[0.602s] 
+[0.602s] [0m
+[1.628s] -- Autodetected CUDA architecture(s):  8.6
+[1.628s] -- Added CUDA NVCC flags for: -gencode;arch=compute_86,code=sm_86
+[1.670s] -- Found gaussian_interface: 0.0.1 (/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/share/gaussian_interface/cmake)
+[1.694s] -- librealsense2 not found; RealSense example will be disabled.
+[1.752s] -- Configuring done
+[1.854s] -- Generating done
+[1.872s] -- Build files have been written to: /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros
+[1.901s] [35m[1mConsolidate compiler generated dependencies of target imgui[0m
+[1.904s] [35m[1mConsolidate compiler generated dependencies of target simple_knn[0m
+[1.911s] [35m[1mConsolidate compiler generated dependencies of target cuda_rasterizer[0m
+[1.920s] [ 17%] Built target imgui
+[1.989s] [ 23%] Built target simple_knn
+[2.027s] [ 39%] Built target cuda_rasterizer
+[2.062s] [35m[1mConsolidate compiler generated dependencies of target gaussian_mapper[0m
+[2.241s] [ 41%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o[0m
+[2.285s] In file included from [01m[K/home/shadygm/projects/Photo-SLAM-ROS/src/gaussian_ros_publisher.cpp:1[m[K:
+[2.285s] [01m[K/home/shadygm/projects/Photo-SLAM-ROS/include/gaussian_ros_publisher.h:7:10:[m[K [01;31m[Kfatal error: [m[Kgaussian_interface/msg/gaussian_array.hpp: No such file or directory
+[2.285s]     7 | #include [01;31m[K"gaussian_interface/msg/gaussian_array.hpp"[m[K
+[2.285s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.285s] compilation terminated.
+[2.287s] gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:202: CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o] Error 1
+[2.288s] gmake[1]: *** [CMakeFiles/Makefile2:238: CMakeFiles/gaussian_mapper.dir/all] Error 2
+[2.288s] gmake: *** [Makefile:146: all] Error 2
+[2.291s] Invoked command in '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros -- -j16 -l16

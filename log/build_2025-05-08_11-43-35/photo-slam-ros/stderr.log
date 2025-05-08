@@ -1,0 +1,16 @@
+[33mCMake Warning at /libtorch/share/cmake/Caffe2/public/cuda.cmake:166 (message):
+  Failed to compute shorthash for libnvrtc.so
+Call Stack (most recent call first):
+  /libtorch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)
+  /libtorch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+  CMakeLists.txt:26 (find_package)
+
+[0m
+[01m[K/home/shadygm/projects/Photo-SLAM-ROS/src/gaussian_ros_publisher.cpp:60:10:[m[K [01;31m[Kfatal error: [m[Krclcpp_components/register_node_macro.hpp: No such file or directory
+   60 | #include [01;31m[K"rclcpp_components/register_node_macro.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:202: CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:238: CMakeFiles/gaussian_mapper.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,105 @@
+-- The CXX compiler identification is GNU 11.4.0
+-- The CUDA compiler identification is NVIDIA 11.8.89
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found CUDA: /usr/local/cuda (found suitable exact version "11.8") 
+-- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found CUDA: /usr/local/cuda (found version "11.8") 
+-- Caffe2: CUDA detected: 11.8
+-- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+-- Caffe2: CUDA toolkit directory: /usr/local/cuda
+-- Caffe2: Header version is: 11.8
+[33mCMake Warning at /libtorch/share/cmake/Caffe2/public/cuda.cmake:166 (message):
+  Failed to compute shorthash for libnvrtc.so
+Call Stack (most recent call first):
+  /libtorch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)
+  /libtorch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+  CMakeLists.txt:24 (find_package)
+
+[0m
+-- Found CUDNN: /usr/lib/x86_64-linux-gnu/libcudnn.so  
+-- Autodetected CUDA architecture(s):  8.6
+-- Added CUDA NVCC flags for: -gencode;arch=compute_86,code=sm_86
+-- Found Torch: /libtorch/lib/libtorch.so  
+-- Found OpenCV: /usr/local (found suitable version "4.8.0", minimum required is "4") 
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- librealsense2 not found; RealSense example will be disabled.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros
+[ 13%] [32mBuilding CUDA object CMakeFiles/cuda_rasterizer.dir/src/stereo_vision.cu.o[0m
+[ 17%] [32mBuilding CUDA object CMakeFiles/cuda_rasterizer.dir/cuda_rasterizer/rasterizer_impl.cu.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/imgui.dir/viewer/imgui/imgui_impl_glfw.cpp.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/imgui.dir/viewer/imgui/imgui_widgets.cpp.o[0m
+[ 17%] [32mBuilding CUDA object CMakeFiles/cuda_rasterizer.dir/src/rasterize_points.cu.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/imgui.dir/viewer/imgui/imgui_impl_opengl3.cpp.o[0m
+[ 21%] [32mBuilding CUDA object CMakeFiles/cuda_rasterizer.dir/cuda_rasterizer/forward.cu.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/imgui.dir/viewer/imgui/imgui_tables.cpp.o[0m
+[ 23%] [32mBuilding CUDA object CMakeFiles/simple_knn.dir/third_party/simple-knn/simple_knn.cu.o[0m
+[ 26%] [32mBuilding CXX object CMakeFiles/imgui.dir/viewer/imgui/imgui_demo.cpp.o[0m
+[ 17%] [32mBuilding CUDA object CMakeFiles/simple_knn.dir/third_party/simple-knn/spatial.cu.o[0m
+[ 28%] [32mBuilding CUDA object CMakeFiles/cuda_rasterizer.dir/src/operate_points.cu.o[0m
+[ 17%] [32mBuilding CUDA object CMakeFiles/cuda_rasterizer.dir/cuda_rasterizer/backward.cu.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/imgui.dir/viewer/imgui/imgui.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/imgui.dir/viewer/imgui/imgui_draw.cpp.o[0m
+[01m[K/home/shadygm/projects/Photo-SLAM-ROS/third_party/simple-knn/simple_knn.cu:23:[m[K [01;35m[Kwarning: [m[K"__CUDACC__" redefined
+   23 | #define __CUDACC__
+      | 
+[01m[K<command-line>:[m[K [01;36m[Knote: [m[Kthis is the location of the previous definition
+[01m[K/home/shadygm/projects/Photo-SLAM-ROS/third_party/simple-knn/simple_knn.cu:23:[m[K [01;35m[Kwarning: [m[K"__CUDACC__" redefined
+   23 | #define __CUDACC__
+      | 
+[01m[K<command-line>:[m[K [01;36m[Knote: [m[Kthis is the location of the previous definition
+[ 34%] [32m[1mLinking CXX shared library ../../lib/libimgui.so[0m
+[ 34%] Built target imgui
+[ 36%] [32m[1mLinking CUDA shared library ../../lib/libsimple_knn.so[0m
+[ 36%] Built target simple_knn
+[ 39%] [32m[1mLinking CUDA shared library ../../lib/libcuda_rasterizer.so[0m
+[ 39%] Built target cuda_rasterizer
+[ 50%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_scene.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_rasterizer.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_renderer.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_keyframe.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_parameters.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_model.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/third_party/tinyply/tinyply.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_mapper.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_trainer.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o[0m
+[01m[K/home/shadygm/projects/Photo-SLAM-ROS/src/gaussian_ros_publisher.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kgaussian_publisher/gaussian_publisher.hpp: No such file or directory
+    1 | #include [01;31m[K"gaussian_publisher/gaussian_publisher.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:202: CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:238: CMakeFiles/gaussian_mapper.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

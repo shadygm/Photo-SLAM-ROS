@@ -1,0 +1,386 @@
+[0.000000] (-) TimerEvent: {}
+[0.000547] (photo-slam-ros) JobQueued: {'identifier': 'photo-slam-ros', 'dependencies': OrderedDict()}
+[0.000612] (photo-slam-ros) JobStarted: {'identifier': 'photo-slam-ros'}
+[0.009601] (photo-slam-ros) JobProgress: {'identifier': 'photo-slam-ros', 'progress': 'cmake'}
+[0.010344] (photo-slam-ros) Command: {'cmd': ['/usr/bin/cmake', '/home/shadygm/projects/Photo-SLAM-ROS', '-DCMAKE_BUILD_TYPE=Release', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros'], 'cwd': '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros', 'env': OrderedDict([('LIBRARY_PATH', '/usr/local/cuda/lib64/stubs'), ('NV_LIBCUBLAS_VERSION', '11.11.3.6-1'), ('NV_NVPROF_DEV_PACKAGE', 'cuda-nvprof-11-8=11.8.87-1'), ('NV_CUDA_COMPAT_PACKAGE', 'cuda-compat-11-8'), ('USER', 'shadygm'), ('NV_CUDA_NSIGHT_COMPUTE_VERSION', '11.8.0-1'), ('HOSTNAME', 'carous'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib:/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib'), ('NV_LIBNCCL_PACKAGE_VERSION', '2.15.5-1'), ('HOME', '/home/shadygm'), ('OLDPWD', '/home/shadygm/projects/Photo-SLAM-ROS/build'), ('NV_CUDNN_PACKAGE_NAME', 'libcudnn8'), ('NV_LIBCUBLAS_DEV_VERSION', '11.11.3.6-1'), ('ROS_PYTHON_VERSION', '3'), ('NV_LIBNCCL_DEV_PACKAGE_VERSION', '2.15.5-1'), ('USER_UID', '1000'), ('NV_LIBNPP_PACKAGE', 'libnpp-11-8=11.8.0.86-1'), ('NV_CUDNN_PACKAGE', 'libcudnn8=8.9.6.50-1+cuda11.8'), ('CUDA_VERSION', '11.8.0'), ('COLCON_PREFIX_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install'), ('NV_NVPROF_VERSION', '11.8.87-1'), ('ROS_DISTRO', 'humble'), ('NV_LIBCUBLAS_PACKAGE_NAME', 'libcublas-11-8'), ('NVIDIA_REQUIRE_CUDA', 'cuda>=11.8 brand=tesla,driver>=470,driver<471 brand=unknown,driver>=470,driver<471 brand=nvidia,driver>=470,driver<471 brand=nvidiartx,driver>=470,driver<471 brand=geforce,driver>=470,driver<471 brand=geforcertx,driver>=470,driver<471 brand=quadro,driver>=470,driver<471 brand=quadrortx,driver>=470,driver<471 brand=titan,driver>=470,driver<471 brand=titanrtx,driver>=470,driver<471'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NV_LIBCUSPARSE_VERSION', '11.7.5.86-1'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('NV_CUDA_LIB_VERSION', '11.8.0-1'), ('NV_LIBNCCL_PACKAGE_NAME', 'libnccl2'), ('NV_NVML_DEV_VERSION', '11.8.86-1'), ('USERNAME', 'shadygm'), ('NV_LIBNPP_DEV_PACKAGE', 'libnpp-dev-11-8=11.8.0.86-1'), ('TERM', 'xterm'), ('NV_CUDA_CUDART_VERSION', '11.8.89-1'), ('NV_CUDNN_PACKAGE_DEV', 'libcudnn8-dev=8.9.6.50-1+cuda11.8'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('NV_LIBCUBLAS_DEV_PACKAGE_NAME', 'libcublas-dev-11-8'), ('NV_LIBCUBLAS_PACKAGE', 'libcublas-11-8=11.11.3.6-1'), ('NVARCH', 'x86_64'), ('NV_LIBNCCL_DEV_PACKAGE_NAME', 'libnccl-dev'), ('NV_LIBCUSPARSE_DEV_VERSION', '11.7.5.86-1'), ('DISPLAY', 'unix:1'), ('NV_LIBNCCL_PACKAGE', 'libnccl2=2.15.5-1+cuda11.8'), ('NVIDIA_PRODUCT_NAME', 'CUDA'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('NV_CUDA_CUDART_DEV_VERSION', '11.8.89-1'), ('XAUTHORITY', ''), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', ''), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('NV_LIBCUBLAS_DEV_PACKAGE', 'libcublas-dev-11-8=11.11.3.6-1'), ('NV_CUDA_NSIGHT_COMPUTE_DEV_PACKAGE', 'cuda-nsight-compute-11-8=11.8.0-1'), ('NV_LIBNCCL_DEV_PACKAGE', 'libnccl-dev=2.15.5-1+cuda11.8'), ('Torch_DIR', '/libtorch/share/cmake/Torch'), ('NV_NVTX_VERSION', '11.8.86-1'), ('NV_LIBNPP_VERSION', '11.8.0.86-1'), ('NV_CUDNN_VERSION', '8.9.6.50'), ('PWD', '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros'), ('LC_ALL', 'en_US.UTF-8'), ('PYTHONPATH', '/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('NCCL_VERSION', '2.15.5-1'), ('USER_GID', '1000'), ('COLCON', '1'), ('NV_LIBNPP_DEV_VERSION', '11.8.0.86-1'), ('CMAKE_PREFIX_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface:/opt/ros/humble')]), 'shell': False}
+[0.023615] (photo-slam-ros) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099847] (-) TimerEvent: {}
+[0.123646] (photo-slam-ros) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.130508] (photo-slam-ros) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.154534] (photo-slam-ros) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.156609] (photo-slam-ros) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.161760] (photo-slam-ros) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.169715] (photo-slam-ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.180122] (photo-slam-ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.199959] (-) TimerEvent: {}
+[0.207360] (photo-slam-ros) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.208500] (photo-slam-ros) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.300075] (-) TimerEvent: {}
+[0.314629] (photo-slam-ros) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.354378] (photo-slam-ros) StdoutLine: {'line': b'-- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.378553] (photo-slam-ros) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.385695] (photo-slam-ros) StdoutLine: {'line': b'-- Found CUDA: /usr/local/cuda (found suitable exact version "11.8") \n'}
+[0.394145] (photo-slam-ros) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[0.400164] (-) TimerEvent: {}
+[0.459997] (photo-slam-ros) StdoutLine: {'line': b'-- Found gaussian_interface: 0.0.1 (/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/share/gaussian_interface/cmake)\n'}
+[0.475382] (photo-slam-ros) StdoutLine: {'line': b'-- Found CUDA: /usr/local/cuda (found version "11.8") \n'}
+[0.475870] (photo-slam-ros) StdoutLine: {'line': b'-- Caffe2: CUDA detected: 11.8\n'}
+[0.475948] (photo-slam-ros) StdoutLine: {'line': b'-- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc\n'}
+[0.476012] (photo-slam-ros) StdoutLine: {'line': b'-- Caffe2: CUDA toolkit directory: /usr/local/cuda\n'}
+[0.500282] (-) TimerEvent: {}
+[0.574077] (photo-slam-ros) StdoutLine: {'line': b'-- Caffe2: Header version is: 11.8\n'}
+[0.582776] (photo-slam-ros) StderrLine: {'line': b'\x1b[33mCMake Warning at /libtorch/share/cmake/Caffe2/public/cuda.cmake:166 (message):\n'}
+[0.583052] (photo-slam-ros) StderrLine: {'line': b'  Failed to compute shorthash for libnvrtc.so\n'}
+[0.583175] (photo-slam-ros) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.583276] (photo-slam-ros) StderrLine: {'line': b'  /libtorch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)\n'}
+[0.583406] (photo-slam-ros) StderrLine: {'line': b'  /libtorch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)\n'}
+[0.583516] (photo-slam-ros) StderrLine: {'line': b'  CMakeLists.txt:26 (find_package)\n'}
+[0.583625] (photo-slam-ros) StderrLine: {'line': b'\n'}
+[0.583734] (photo-slam-ros) StderrLine: {'line': b'\x1b[0m\n'}
+[0.600392] (-) TimerEvent: {}
+[0.700647] (-) TimerEvent: {}
+[0.800913] (-) TimerEvent: {}
+[0.901203] (-) TimerEvent: {}
+[1.001498] (-) TimerEvent: {}
+[1.101777] (-) TimerEvent: {}
+[1.202091] (-) TimerEvent: {}
+[1.302413] (-) TimerEvent: {}
+[1.402694] (-) TimerEvent: {}
+[1.503027] (-) TimerEvent: {}
+[1.594402] (photo-slam-ros) StdoutLine: {'line': b'-- Autodetected CUDA architecture(s):  8.6\n'}
+[1.594595] (photo-slam-ros) StdoutLine: {'line': b'-- Added CUDA NVCC flags for: -gencode;arch=compute_86,code=sm_86\n'}
+[1.603091] (-) TimerEvent: {}
+[1.649135] (photo-slam-ros) StdoutLine: {'line': b'-- librealsense2 not found; RealSense example will be disabled.\n'}
+[1.703225] (-) TimerEvent: {}
+[1.708884] (photo-slam-ros) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.803329] (-) TimerEvent: {}
+[1.844618] (photo-slam-ros) StdoutLine: {'line': b'-- Generating done\n'}
+[1.866997] (photo-slam-ros) StdoutLine: {'line': b'-- Build files have been written to: /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros\n'}
+[1.876646] (photo-slam-ros) CommandEnded: {'returncode': 0}
+[1.877219] (photo-slam-ros) JobProgress: {'identifier': 'photo-slam-ros', 'progress': 'build'}
+[1.878281] (photo-slam-ros) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros', '--', '-j16', '-l16'], 'cwd': '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros', 'env': OrderedDict([('LIBRARY_PATH', '/usr/local/cuda/lib64/stubs'), ('NV_LIBCUBLAS_VERSION', '11.11.3.6-1'), ('NV_NVPROF_DEV_PACKAGE', 'cuda-nvprof-11-8=11.8.87-1'), ('NV_CUDA_COMPAT_PACKAGE', 'cuda-compat-11-8'), ('USER', 'shadygm'), ('NV_CUDA_NSIGHT_COMPUTE_VERSION', '11.8.0-1'), ('HOSTNAME', 'carous'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib:/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib'), ('NV_LIBNCCL_PACKAGE_VERSION', '2.15.5-1'), ('HOME', '/home/shadygm'), ('OLDPWD', '/home/shadygm/projects/Photo-SLAM-ROS/build'), ('NV_CUDNN_PACKAGE_NAME', 'libcudnn8'), ('NV_LIBCUBLAS_DEV_VERSION', '11.11.3.6-1'), ('ROS_PYTHON_VERSION', '3'), ('NV_LIBNCCL_DEV_PACKAGE_VERSION', '2.15.5-1'), ('USER_UID', '1000'), ('NV_LIBNPP_PACKAGE', 'libnpp-11-8=11.8.0.86-1'), ('NV_CUDNN_PACKAGE', 'libcudnn8=8.9.6.50-1+cuda11.8'), ('CUDA_VERSION', '11.8.0'), ('COLCON_PREFIX_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install'), ('NV_NVPROF_VERSION', '11.8.87-1'), ('ROS_DISTRO', 'humble'), ('NV_LIBCUBLAS_PACKAGE_NAME', 'libcublas-11-8'), ('NVIDIA_REQUIRE_CUDA', 'cuda>=11.8 brand=tesla,driver>=470,driver<471 brand=unknown,driver>=470,driver<471 brand=nvidia,driver>=470,driver<471 brand=nvidiartx,driver>=470,driver<471 brand=geforce,driver>=470,driver<471 brand=geforcertx,driver>=470,driver<471 brand=quadro,driver>=470,driver<471 brand=quadrortx,driver>=470,driver<471 brand=titan,driver>=470,driver<471 brand=titanrtx,driver>=470,driver<471'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NV_LIBCUSPARSE_VERSION', '11.7.5.86-1'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('NV_CUDA_LIB_VERSION', '11.8.0-1'), ('NV_LIBNCCL_PACKAGE_NAME', 'libnccl2'), ('NV_NVML_DEV_VERSION', '11.8.86-1'), ('USERNAME', 'shadygm'), ('NV_LIBNPP_DEV_PACKAGE', 'libnpp-dev-11-8=11.8.0.86-1'), ('TERM', 'xterm'), ('NV_CUDA_CUDART_VERSION', '11.8.89-1'), ('NV_CUDNN_PACKAGE_DEV', 'libcudnn8-dev=8.9.6.50-1+cuda11.8'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('NV_LIBCUBLAS_DEV_PACKAGE_NAME', 'libcublas-dev-11-8'), ('NV_LIBCUBLAS_PACKAGE', 'libcublas-11-8=11.11.3.6-1'), ('NVARCH', 'x86_64'), ('NV_LIBNCCL_DEV_PACKAGE_NAME', 'libnccl-dev'), ('NV_LIBCUSPARSE_DEV_VERSION', '11.7.5.86-1'), ('DISPLAY', 'unix:1'), ('NV_LIBNCCL_PACKAGE', 'libnccl2=2.15.5-1+cuda11.8'), ('NVIDIA_PRODUCT_NAME', 'CUDA'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('NV_CUDA_CUDART_DEV_VERSION', '11.8.89-1'), ('XAUTHORITY', ''), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', ''), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('NV_LIBCUBLAS_DEV_PACKAGE', 'libcublas-dev-11-8=11.11.3.6-1'), ('NV_CUDA_NSIGHT_COMPUTE_DEV_PACKAGE', 'cuda-nsight-compute-11-8=11.8.0-1'), ('NV_LIBNCCL_DEV_PACKAGE', 'libnccl-dev=2.15.5-1+cuda11.8'), ('Torch_DIR', '/libtorch/share/cmake/Torch'), ('NV_NVTX_VERSION', '11.8.86-1'), ('NV_LIBNPP_VERSION', '11.8.0.86-1'), ('NV_CUDNN_VERSION', '8.9.6.50'), ('PWD', '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros'), ('LC_ALL', 'en_US.UTF-8'), ('PYTHONPATH', '/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('NCCL_VERSION', '2.15.5-1'), ('USER_GID', '1000'), ('COLCON', '1'), ('NV_LIBNPP_DEV_VERSION', '11.8.0.86-1'), ('CMAKE_PREFIX_PATH', '/home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros:/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface:/opt/ros/humble')]), 'shell': False}
+[1.903422] (-) TimerEvent: {}
+[1.923527] (photo-slam-ros) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target imgui\x1b[0m\n'}
+[1.927038] (photo-slam-ros) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target simple_knn\x1b[0m\n'}
+[1.935558] (photo-slam-ros) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cuda_rasterizer\x1b[0m\n'}
+[1.941900] (photo-slam-ros) StdoutLine: {'line': b'[ 17%] Built target imgui\n'}
+[2.003517] (-) TimerEvent: {}
+[2.015747] (photo-slam-ros) StdoutLine: {'line': b'[ 23%] Built target simple_knn\n'}
+[2.051346] (photo-slam-ros) StdoutLine: {'line': b'[ 39%] Built target cuda_rasterizer\n'}
+[2.086276] (photo-slam-ros) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target gaussian_mapper\x1b[0m\n'}
+[2.103622] (-) TimerEvent: {}
+[2.203888] (-) TimerEvent: {}
+[2.272135] (photo-slam-ros) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_keyframe.cpp.o\x1b[0m\n'}
+[2.274896] (photo-slam-ros) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_model.cpp.o\x1b[0m\n'}
+[2.278032] (photo-slam-ros) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_rasterizer.cpp.o\x1b[0m\n'}
+[2.280510] (photo-slam-ros) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_renderer.cpp.o\x1b[0m\n'}
+[2.284996] (photo-slam-ros) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_scene.cpp.o\x1b[0m\n'}
+[2.294960] (photo-slam-ros) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_trainer.cpp.o\x1b[0m\n'}
+[2.298129] (photo-slam-ros) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o\x1b[0m\n'}
+[2.298320] (photo-slam-ros) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_mapper.cpp.o\x1b[0m\n'}
+[2.304004] (-) TimerEvent: {}
+[2.404312] (-) TimerEvent: {}
+[2.504655] (-) TimerEvent: {}
+[2.605127] (-) TimerEvent: {}
+[2.705554] (-) TimerEvent: {}
+[2.778251] (photo-slam-ros) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shadygm/projects/Photo-SLAM-ROS/src/gaussian_ros_publisher.cpp:60:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Krclcpp_components/register_node_macro.hpp: No such file or directory\n'}
+[2.778493] (photo-slam-ros) StderrLine: {'line': b'   60 | #include \x1b[01;31m\x1b[K"rclcpp_components/register_node_macro.hpp"\x1b[m\x1b[K\n'}
+[2.778587] (photo-slam-ros) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.778669] (photo-slam-ros) StderrLine: {'line': b'compilation terminated.\n'}
+[2.786138] (photo-slam-ros) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:202: CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o] Error 1\n'}
+[2.786378] (photo-slam-ros) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[2.805682] (-) TimerEvent: {}
+[2.906053] (-) TimerEvent: {}
+[3.006431] (-) TimerEvent: {}
+[3.106806] (-) TimerEvent: {}
+[3.207191] (-) TimerEvent: {}
+[3.307588] (-) TimerEvent: {}
+[3.407955] (-) TimerEvent: {}
+[3.508385] (-) TimerEvent: {}
+[3.608849] (-) TimerEvent: {}
+[3.709228] (-) TimerEvent: {}
+[3.809620] (-) TimerEvent: {}
+[3.910014] (-) TimerEvent: {}
+[4.010440] (-) TimerEvent: {}
+[4.110953] (-) TimerEvent: {}
+[4.211374] (-) TimerEvent: {}
+[4.311772] (-) TimerEvent: {}
+[4.412199] (-) TimerEvent: {}
+[4.512689] (-) TimerEvent: {}
+[4.613147] (-) TimerEvent: {}
+[4.713602] (-) TimerEvent: {}
+[4.814036] (-) TimerEvent: {}
+[4.914462] (-) TimerEvent: {}
+[5.015094] (-) TimerEvent: {}
+[5.115495] (-) TimerEvent: {}
+[5.215903] (-) TimerEvent: {}
+[5.316332] (-) TimerEvent: {}
+[5.416776] (-) TimerEvent: {}
+[5.517199] (-) TimerEvent: {}
+[5.617638] (-) TimerEvent: {}
+[5.718057] (-) TimerEvent: {}
+[5.818434] (-) TimerEvent: {}
+[5.918849] (-) TimerEvent: {}
+[6.019239] (-) TimerEvent: {}
+[6.119668] (-) TimerEvent: {}
+[6.220081] (-) TimerEvent: {}
+[6.320619] (-) TimerEvent: {}
+[6.421089] (-) TimerEvent: {}
+[6.521535] (-) TimerEvent: {}
+[6.621937] (-) TimerEvent: {}
+[6.722242] (-) TimerEvent: {}
+[6.822606] (-) TimerEvent: {}
+[6.922969] (-) TimerEvent: {}
+[7.023383] (-) TimerEvent: {}
+[7.123756] (-) TimerEvent: {}
+[7.224078] (-) TimerEvent: {}
+[7.324406] (-) TimerEvent: {}
+[7.424698] (-) TimerEvent: {}
+[7.525004] (-) TimerEvent: {}
+[7.625432] (-) TimerEvent: {}
+[7.725885] (-) TimerEvent: {}
+[7.826256] (-) TimerEvent: {}
+[7.926660] (-) TimerEvent: {}
+[8.027009] (-) TimerEvent: {}
+[8.127330] (-) TimerEvent: {}
+[8.227709] (-) TimerEvent: {}
+[8.328046] (-) TimerEvent: {}
+[8.428416] (-) TimerEvent: {}
+[8.528741] (-) TimerEvent: {}
+[8.629090] (-) TimerEvent: {}
+[8.729424] (-) TimerEvent: {}
+[8.829775] (-) TimerEvent: {}
+[8.930090] (-) TimerEvent: {}
+[9.030424] (-) TimerEvent: {}
+[9.130787] (-) TimerEvent: {}
+[9.231148] (-) TimerEvent: {}
+[9.331503] (-) TimerEvent: {}
+[9.431886] (-) TimerEvent: {}
+[9.532267] (-) TimerEvent: {}
+[9.632643] (-) TimerEvent: {}
+[9.732944] (-) TimerEvent: {}
+[9.833283] (-) TimerEvent: {}
+[9.933683] (-) TimerEvent: {}
+[10.034007] (-) TimerEvent: {}
+[10.134391] (-) TimerEvent: {}
+[10.234758] (-) TimerEvent: {}
+[10.335109] (-) TimerEvent: {}
+[10.435498] (-) TimerEvent: {}
+[10.535887] (-) TimerEvent: {}
+[10.636216] (-) TimerEvent: {}
+[10.736568] (-) TimerEvent: {}
+[10.836873] (-) TimerEvent: {}
+[10.937179] (-) TimerEvent: {}
+[11.037521] (-) TimerEvent: {}
+[11.137857] (-) TimerEvent: {}
+[11.238223] (-) TimerEvent: {}
+[11.338601] (-) TimerEvent: {}
+[11.438917] (-) TimerEvent: {}
+[11.539248] (-) TimerEvent: {}
+[11.639606] (-) TimerEvent: {}
+[11.739938] (-) TimerEvent: {}
+[11.840277] (-) TimerEvent: {}
+[11.940638] (-) TimerEvent: {}
+[12.041032] (-) TimerEvent: {}
+[12.141469] (-) TimerEvent: {}
+[12.241884] (-) TimerEvent: {}
+[12.342261] (-) TimerEvent: {}
+[12.442654] (-) TimerEvent: {}
+[12.543034] (-) TimerEvent: {}
+[12.643400] (-) TimerEvent: {}
+[12.743712] (-) TimerEvent: {}
+[12.844044] (-) TimerEvent: {}
+[12.944369] (-) TimerEvent: {}
+[13.044670] (-) TimerEvent: {}
+[13.144986] (-) TimerEvent: {}
+[13.245313] (-) TimerEvent: {}
+[13.345707] (-) TimerEvent: {}
+[13.446121] (-) TimerEvent: {}
+[13.546676] (-) TimerEvent: {}
+[13.647057] (-) TimerEvent: {}
+[13.747422] (-) TimerEvent: {}
+[13.847792] (-) TimerEvent: {}
+[13.948172] (-) TimerEvent: {}
+[14.048542] (-) TimerEvent: {}
+[14.148929] (-) TimerEvent: {}
+[14.249319] (-) TimerEvent: {}
+[14.349691] (-) TimerEvent: {}
+[14.450047] (-) TimerEvent: {}
+[14.550398] (-) TimerEvent: {}
+[14.650775] (-) TimerEvent: {}
+[14.751110] (-) TimerEvent: {}
+[14.851479] (-) TimerEvent: {}
+[14.951881] (-) TimerEvent: {}
+[15.052231] (-) TimerEvent: {}
+[15.152565] (-) TimerEvent: {}
+[15.252867] (-) TimerEvent: {}
+[15.353222] (-) TimerEvent: {}
+[15.453739] (-) TimerEvent: {}
+[15.554099] (-) TimerEvent: {}
+[15.654415] (-) TimerEvent: {}
+[15.754740] (-) TimerEvent: {}
+[15.855082] (-) TimerEvent: {}
+[15.955416] (-) TimerEvent: {}
+[16.055719] (-) TimerEvent: {}
+[16.156067] (-) TimerEvent: {}
+[16.256471] (-) TimerEvent: {}
+[16.356806] (-) TimerEvent: {}
+[16.457202] (-) TimerEvent: {}
+[16.557602] (-) TimerEvent: {}
+[16.657959] (-) TimerEvent: {}
+[16.758372] (-) TimerEvent: {}
+[16.858758] (-) TimerEvent: {}
+[16.959120] (-) TimerEvent: {}
+[17.059462] (-) TimerEvent: {}
+[17.159811] (-) TimerEvent: {}
+[17.260197] (-) TimerEvent: {}
+[17.360630] (-) TimerEvent: {}
+[17.460951] (-) TimerEvent: {}
+[17.561263] (-) TimerEvent: {}
+[17.661629] (-) TimerEvent: {}
+[17.762005] (-) TimerEvent: {}
+[17.862495] (-) TimerEvent: {}
+[17.962838] (-) TimerEvent: {}
+[18.063191] (-) TimerEvent: {}
+[18.163574] (-) TimerEvent: {}
+[18.263966] (-) TimerEvent: {}
+[18.364393] (-) TimerEvent: {}
+[18.464702] (-) TimerEvent: {}
+[18.565016] (-) TimerEvent: {}
+[18.665401] (-) TimerEvent: {}
+[18.765725] (-) TimerEvent: {}
+[18.866102] (-) TimerEvent: {}
+[18.966488] (-) TimerEvent: {}
+[19.066800] (-) TimerEvent: {}
+[19.167115] (-) TimerEvent: {}
+[19.267490] (-) TimerEvent: {}
+[19.367833] (-) TimerEvent: {}
+[19.468167] (-) TimerEvent: {}
+[19.568548] (-) TimerEvent: {}
+[19.668855] (-) TimerEvent: {}
+[19.769239] (-) TimerEvent: {}
+[19.869795] (-) TimerEvent: {}
+[19.970173] (-) TimerEvent: {}
+[20.070540] (-) TimerEvent: {}
+[20.170907] (-) TimerEvent: {}
+[20.271260] (-) TimerEvent: {}
+[20.371587] (-) TimerEvent: {}
+[20.471911] (-) TimerEvent: {}
+[20.572227] (-) TimerEvent: {}
+[20.672562] (-) TimerEvent: {}
+[20.772900] (-) TimerEvent: {}
+[20.873278] (-) TimerEvent: {}
+[20.973719] (-) TimerEvent: {}
+[21.074055] (-) TimerEvent: {}
+[21.174505] (-) TimerEvent: {}
+[21.274892] (-) TimerEvent: {}
+[21.375420] (-) TimerEvent: {}
+[21.475769] (-) TimerEvent: {}
+[21.576188] (-) TimerEvent: {}
+[21.676566] (-) TimerEvent: {}
+[21.776979] (-) TimerEvent: {}
+[21.877498] (-) TimerEvent: {}
+[21.977854] (-) TimerEvent: {}
+[22.078182] (-) TimerEvent: {}
+[22.178534] (-) TimerEvent: {}
+[22.278867] (-) TimerEvent: {}
+[22.379219] (-) TimerEvent: {}
+[22.479563] (-) TimerEvent: {}
+[22.579947] (-) TimerEvent: {}
+[22.680388] (-) TimerEvent: {}
+[22.780764] (-) TimerEvent: {}
+[22.881125] (-) TimerEvent: {}
+[22.981510] (-) TimerEvent: {}
+[23.081857] (-) TimerEvent: {}
+[23.182177] (-) TimerEvent: {}
+[23.282469] (-) TimerEvent: {}
+[23.382754] (-) TimerEvent: {}
+[23.483065] (-) TimerEvent: {}
+[23.583434] (-) TimerEvent: {}
+[23.683891] (-) TimerEvent: {}
+[23.784200] (-) TimerEvent: {}
+[23.884530] (-) TimerEvent: {}
+[23.984854] (-) TimerEvent: {}
+[24.085138] (-) TimerEvent: {}
+[24.185414] (-) TimerEvent: {}
+[24.285705] (-) TimerEvent: {}
+[24.385999] (-) TimerEvent: {}
+[24.486296] (-) TimerEvent: {}
+[24.586613] (-) TimerEvent: {}
+[24.686895] (-) TimerEvent: {}
+[24.787191] (-) TimerEvent: {}
+[24.887519] (-) TimerEvent: {}
+[24.987841] (-) TimerEvent: {}
+[25.088151] (-) TimerEvent: {}
+[25.188504] (-) TimerEvent: {}
+[25.288786] (-) TimerEvent: {}
+[25.389091] (-) TimerEvent: {}
+[25.489396] (-) TimerEvent: {}
+[25.589674] (-) TimerEvent: {}
+[25.689978] (-) TimerEvent: {}
+[25.790259] (-) TimerEvent: {}
+[25.890564] (-) TimerEvent: {}
+[25.990846] (-) TimerEvent: {}
+[26.091131] (-) TimerEvent: {}
+[26.191404] (-) TimerEvent: {}
+[26.291688] (-) TimerEvent: {}
+[26.391997] (-) TimerEvent: {}
+[26.492298] (-) TimerEvent: {}
+[26.592613] (-) TimerEvent: {}
+[26.692892] (-) TimerEvent: {}
+[26.793170] (-) TimerEvent: {}
+[26.893479] (-) TimerEvent: {}
+[26.993773] (-) TimerEvent: {}
+[27.094053] (-) TimerEvent: {}
+[27.194330] (-) TimerEvent: {}
+[27.294621] (-) TimerEvent: {}
+[27.394942] (-) TimerEvent: {}
+[27.495382] (-) TimerEvent: {}
+[27.595705] (-) TimerEvent: {}
+[27.696004] (-) TimerEvent: {}
+[27.796309] (-) TimerEvent: {}
+[27.896638] (-) TimerEvent: {}
+[27.996989] (-) TimerEvent: {}
+[28.097276] (-) TimerEvent: {}
+[28.197570] (-) TimerEvent: {}
+[28.297859] (-) TimerEvent: {}
+[28.398159] (-) TimerEvent: {}
+[28.498467] (-) TimerEvent: {}
+[28.598777] (-) TimerEvent: {}
+[28.699069] (-) TimerEvent: {}
+[28.799376] (-) TimerEvent: {}
+[28.899662] (-) TimerEvent: {}
+[28.999944] (-) TimerEvent: {}
+[29.100235] (-) TimerEvent: {}
+[29.200565] (-) TimerEvent: {}
+[29.300864] (-) TimerEvent: {}
+[29.401181] (-) TimerEvent: {}
+[29.501538] (-) TimerEvent: {}
+[29.601817] (-) TimerEvent: {}
+[29.702107] (-) TimerEvent: {}
+[29.802416] (-) TimerEvent: {}
+[29.902699] (-) TimerEvent: {}
+[30.002966] (-) TimerEvent: {}
+[30.103215] (-) TimerEvent: {}
+[30.203541] (-) TimerEvent: {}
+[30.303826] (-) TimerEvent: {}
+[30.404122] (-) TimerEvent: {}
+[30.504409] (-) TimerEvent: {}
+[30.604696] (-) TimerEvent: {}
+[30.704978] (-) TimerEvent: {}
+[30.805281] (-) TimerEvent: {}
+[30.905594] (-) TimerEvent: {}
+[31.005873] (-) TimerEvent: {}
+[31.106190] (-) TimerEvent: {}
+[31.206525] (-) TimerEvent: {}
+[31.306818] (-) TimerEvent: {}
+[31.407100] (-) TimerEvent: {}
+[31.507399] (-) TimerEvent: {}
+[31.607687] (-) TimerEvent: {}
+[31.708046] (-) TimerEvent: {}
+[31.808371] (-) TimerEvent: {}
+[31.826320] (photo-slam-ros) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:238: CMakeFiles/gaussian_mapper.dir/all] Error 2\n'}
+[31.826558] (photo-slam-ros) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[31.828911] (photo-slam-ros) CommandEnded: {'returncode': 2}
+[31.838033] (photo-slam-ros) JobEnded: {'identifier': 'photo-slam-ros', 'rc': 2}
+[31.848447] (-) EventReactorShutdown: {}

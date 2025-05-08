@@ -1,0 +1,103 @@
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found CUDA: /usr/local/cuda (found suitable exact version "11.8") 
+-- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found gaussian_interface: 0.0.1 (/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/share/gaussian_interface/cmake)
+-- Found CUDA: /usr/local/cuda (found version "11.8") 
+-- Caffe2: CUDA detected: 11.8
+-- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+-- Caffe2: CUDA toolkit directory: /usr/local/cuda
+-- Caffe2: Header version is: 11.8
+[33mCMake Warning at /libtorch/share/cmake/Caffe2/public/cuda.cmake:166 (message):
+  Failed to compute shorthash for libnvrtc.so
+Call Stack (most recent call first):
+  /libtorch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)
+  /libtorch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+  CMakeLists.txt:27 (find_package)
+
+[0m
+-- Autodetected CUDA architecture(s):  8.6
+-- Added CUDA NVCC flags for: -gencode;arch=compute_86,code=sm_86
+-- librealsense2 not found; RealSense example will be disabled.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros
+[35m[1mConsolidate compiler generated dependencies of target imgui[0m
+[35m[1mConsolidate compiler generated dependencies of target simple_knn[0m
+[35m[1mConsolidate compiler generated dependencies of target cuda_rasterizer[0m
+[ 17%] Built target imgui
+[ 23%] Built target simple_knn
+[ 39%] Built target cuda_rasterizer
+[35m[1mConsolidate compiler generated dependencies of target gaussian_mapper[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/third_party/tinyply/tinyply.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_keyframe.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_model.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_parameters.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_rasterizer.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_renderer.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_scene.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_trainer.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_mapper.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o[0m
+[ 63%] [32m[1mLinking CXX shared library ../../lib/libgaussian_mapper.so[0m
+[ 63%] Built target gaussian_mapper
+[ 67%] [32mBuilding CXX object CMakeFiles/gaussian_viewer.dir/viewer/map_drawer.cpp.o[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/gaussian_viewer.dir/viewer/imgui_viewer.cpp.o[0m
+[ 69%] [32m[1mLinking CXX shared library ../../lib/libgaussian_viewer.so[0m
+[ 69%] Built target gaussian_viewer
+[ 78%] [32mBuilding CXX object CMakeFiles/replica_mono.dir/examples/replica_mono.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/euroc_stereo.dir/examples/euroc_stereo.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/replica_rgbd.dir/examples/replica_rgbd.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/view_result.dir/examples/view_result.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/tum_rgbd.dir/examples/tum_rgbd.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/train_colmap.dir/examples/train_colmap.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/tum_mono.dir/examples/tum_mono.cpp.o[0m
+[ 86%] [32m[1mLinking CXX executable ../../bin/view_result[0m
+[ 89%] [32m[1mLinking CXX executable ../../bin/tum_mono[0m
+[ 91%] [32m[1mLinking CXX executable ../../bin/tum_rgbd[0m
+[ 93%] [32m[1mLinking CXX executable ../../bin/replica_mono[0m
+[ 95%] [32m[1mLinking CXX executable ../../bin/euroc_stereo[0m
+[ 97%] [32m[1mLinking CXX executable ../../bin/replica_rgbd[0m
+[100%] [32m[1mLinking CXX executable ../../bin/train_colmap[0m
+[100%] Built target view_result
+[100%] Built target tum_mono
+[100%] Built target tum_rgbd
+[100%] Built target replica_mono
+[100%] Built target euroc_stereo
+[100%] Built target train_colmap
+[100%] Built target replica_rgbd
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib/photo-slam-ros/train_colmap
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib/photo-slam-ros/view_result
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib/photo-slam-ros/replica_mono
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib/photo-slam-ros/replica_rgbd
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib/photo-slam-ros/tum_mono
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib/photo-slam-ros/tum_rgbd
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/lib/photo-slam-ros/euroc_stereo
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/ament_index/resource_index/package_run_dependencies/photo-slam-ros
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/ament_index/resource_index/parent_prefix_path/photo-slam-ros
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/environment/ament_prefix_path.sh
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/environment/ament_prefix_path.dsv
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/environment/path.sh
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/environment/path.dsv
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/local_setup.bash
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/local_setup.sh
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/local_setup.zsh
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/local_setup.dsv
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/package.dsv
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/ament_index/resource_index/packages/photo-slam-ros
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/cmake/photo-slam-rosConfig.cmake
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/cmake/photo-slam-rosConfig-version.cmake
+-- Symlinking: /home/shadygm/projects/Photo-SLAM-ROS/install/photo-slam-ros/share/photo-slam-ros/package.xml

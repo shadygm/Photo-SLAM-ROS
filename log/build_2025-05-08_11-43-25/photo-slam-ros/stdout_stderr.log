@@ -1,0 +1,67 @@
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found CUDA: /usr/local/cuda (found suitable exact version "11.8") 
+-- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found gaussian_interface: 0.0.1 (/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install/gaussian_interface/share/gaussian_interface/cmake)
+-- Found CUDA: /usr/local/cuda (found version "11.8") 
+-- Caffe2: CUDA detected: 11.8
+-- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+-- Caffe2: CUDA toolkit directory: /usr/local/cuda
+-- Caffe2: Header version is: 11.8
+[33mCMake Warning at /libtorch/share/cmake/Caffe2/public/cuda.cmake:166 (message):
+  Failed to compute shorthash for libnvrtc.so
+Call Stack (most recent call first):
+  /libtorch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)
+  /libtorch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+  CMakeLists.txt:26 (find_package)
+
+[0m
+-- Autodetected CUDA architecture(s):  8.6
+-- Added CUDA NVCC flags for: -gencode;arch=compute_86,code=sm_86
+-- librealsense2 not found; RealSense example will be disabled.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros
+[35m[1mConsolidate compiler generated dependencies of target imgui[0m
+[35m[1mConsolidate compiler generated dependencies of target simple_knn[0m
+[35m[1mConsolidate compiler generated dependencies of target cuda_rasterizer[0m
+[ 17%] Built target imgui
+[ 23%] Built target simple_knn
+[ 39%] Built target cuda_rasterizer
+[35m[1mConsolidate compiler generated dependencies of target gaussian_mapper[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/third_party/tinyply/tinyply.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_keyframe.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_parameters.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_model.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_rasterizer.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_renderer.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_scene.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_trainer.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_mapper.cpp.o[0m
+[01m[K/home/shadygm/projects/Photo-SLAM-ROS/src/gaussian_ros_publisher.cpp:60:10:[m[K [01;31m[Kfatal error: [m[Krclcpp_components/register_node_macro.hpp: No such file or directory
+   60 | #include [01;31m[K"rclcpp_components/register_node_macro.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:202: CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:90: CMakeFiles/gaussian_mapper.dir/src/gaussian_keyframe.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:104: CMakeFiles/gaussian_mapper.dir/src/gaussian_model.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:132: CMakeFiles/gaussian_mapper.dir/src/gaussian_rasterizer.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:146: CMakeFiles/gaussian_mapper.dir/src/gaussian_renderer.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:160: CMakeFiles/gaussian_mapper.dir/src/gaussian_scene.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:174: CMakeFiles/gaussian_mapper.dir/src/gaussian_trainer.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/gaussian_mapper.dir/build.make:188: CMakeFiles/gaussian_mapper.dir/src/gaussian_mapper.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:238: CMakeFiles/gaussian_mapper.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

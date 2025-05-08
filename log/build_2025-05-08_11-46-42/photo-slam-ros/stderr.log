@@ -1,0 +1,8 @@
+[33mCMake Warning at /libtorch/share/cmake/Caffe2/public/cuda.cmake:166 (message):
+  Failed to compute shorthash for libnvrtc.so
+Call Stack (most recent call first):
+  /libtorch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)
+  /libtorch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+  CMakeLists.txt:27 (find_package)
+
+[0m

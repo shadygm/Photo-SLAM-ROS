@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from gaussian_interface/msg/GaussianArray.msg
+// generated code does not contain a copyright notice
+
+#include "gaussian_interface/msg/SingleGaussian.idl"
+
+module gaussian_interface {
+  module msg {
+    @verbatim (language="comment", text=
+      "GaussianArray.msg")
+    struct GaussianArray {
+      @verbatim (language="comment", text=
+        "Array of Single Gaussian messages")
+      sequence<gaussian_interface::msg::SingleGaussian> gaussians;
+    };
+  };
+};
