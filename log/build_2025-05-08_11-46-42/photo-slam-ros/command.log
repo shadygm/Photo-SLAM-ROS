@@ -1,4 +1,0 @@
-Invoking command in '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros -- -j16 -l16
-Invoked command in '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros -- -j16 -l16
-Invoking command in '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros
-Invoked command in '/home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/shadygm/projects/Photo-SLAM-ROS/build/photo-slam-ros

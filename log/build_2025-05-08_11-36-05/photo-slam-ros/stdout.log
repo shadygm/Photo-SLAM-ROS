@@ -1,4 +1,0 @@
-[ 17%] Built target imgui
-[ 23%] Built target simple_knn
-[ 39%] Built target cuda_rasterizer
-[ 41%] [32mBuilding CXX object CMakeFiles/gaussian_mapper.dir/src/gaussian_ros_publisher.cpp.o[0m

@@ -19,6 +19,7 @@
  */
 
 #include "include/gaussian_mapper.h"
+#include <rclcpp/rclcpp.hpp>
 
 GaussianMapper::GaussianMapper(std::shared_ptr<ORB_SLAM3::System> pSLAM,
                                std::filesystem::path gaussian_config_file_path,
@@ -211,6 +212,17 @@ GaussianMapper::GaussianMapper(std::shared_ptr<ORB_SLAM3::System> pSLAM,
     }
     this->scene_->addCamera(camera);
   }
+
+  if (!rclcpp::ok()) {
+    int argc = 0;
+    char **argv = nullptr;
+    rclcpp::init(argc, argv);
+  }
+
+  // Initialize the gaussian ros publisher
+  ros_publisher_ = std::make_shared<GaussianPublisher>(
+      rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(
+          true));
 }
 
 void GaussianMapper::readConfigFromFile(std::filesystem::path cfg_path) {
@@ -505,6 +517,7 @@ void GaussianMapper::run() {
 
     if (SLAM_ended_ || getIteration() >= opt_params_.iterations_)
       break;
+    ros_publisher_->publishGaussianMap(gaussians_);
   }
 
   // Third loop: Tail gaussian optimization
@@ -524,6 +537,7 @@ void GaussianMapper::run() {
   writeKeyframeUsedTimes(result_dir_ / "used_times", "final");
 
   signalStop();
+  rclcpp::shutdown();
 }
 
 void GaussianMapper::trainColmap() {
@@ -1669,7 +1683,7 @@ void GaussianMapper::keyframesToJson(std::filesystem::path result_dir) {
     json_kf["id"] = static_cast<Json::Value::UInt64>(pkf->fid_);
     json_kf["img_name"] =
         pkf->img_filename_; //(std::to_string(getIteration()) + "_" +
-                            //std::to_string(pkf->fid_));
+                            // std::to_string(pkf->fid_));
     json_kf["width"] = pkf->image_width_;
     json_kf["height"] = pkf->image_height_;
 

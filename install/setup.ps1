@@ -22,8 +22,8 @@ function _colcon_prefix_chain_powershell_source_script {
 }
 
 # source chained prefixes
-_colcon_prefix_chain_powershell_source_script "/opt/ros/humble\local_setup.ps1"
-_colcon_prefix_chain_powershell_source_script "/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface/install\local_setup.ps1"
+_colcon_prefix_chain_powershell_source_script "/opt/ros/jazzy\local_setup.ps1"
+_colcon_prefix_chain_powershell_source_script "/home/shadygm/ros2_jazzy/ros2-linux\local_setup.ps1"
 
 # source this prefix
 $env:COLCON_CURRENT_PREFIX=(Split-Path $PSCommandPath -Parent)
