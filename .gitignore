@@ -48,4 +48,4 @@
 
 # ImGui .ini
 *imgui.ini
-data
+**/data/

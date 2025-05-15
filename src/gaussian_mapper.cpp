@@ -537,12 +537,13 @@ void GaussianMapper::run() {
       // auto rendered_image = renderFromPose(currentPose, padded_width, height, false);
       // ros_publisher_->publishGaussianMap(gaussians_);
       ros_publisher_->publishCVImage(slamImage);
-      if (count > 30) {
+      if (count > 100) {
         ros_publisher_->publishGaussians(gaussians_);
         count = 0;
       }
       count++;
   }
+  ros_publisher_->publishGaussians(gaussians_);
 
   // Third loop: Tail gaussian optimization
   int densify_interval = densifyInterval();

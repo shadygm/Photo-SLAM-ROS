@@ -1,69 +1,78 @@
 #!/bin/bash
 
-source install/setup.bash
-export LD_LIBRARY_PATH=$(pwd)/install/photo-slam-ros/lib:$LD_LIBRARY_PATH
+# Auto-config
+VOCAB="./ORB-SLAM3/Vocabulary/ORBvoc.txt"
+VIEWER_FLAG="no_viewer"
+RESULTS_DIR="./results"
 
-echo "========== ROS 2 Run: Photo-SLAM-ROS =========="
-
-# List executables
-echo "Available Executables:"
-echo "1) train_colmap"
-echo "2) view_result"
-echo "3) replica_mono"
-echo "4) replica_rgbd"
-echo "5) tum_mono"
-echo "6) tum_rgbd"
-echo "7) euroc_stereo"
-echo "8) realsense_rgbd"
-
-# Command-line arg #1 = executable name or number
-choice=$1
-shift
-
-# If not given, ask interactively
-if [ -z "$choice" ]; then
-  read -p "Enter number of the executable to run: " choice
+if [ "$#" -lt 3 ]; then
+  echo "Usage: $0 <group: tum|replica|euroc> <mode: mono|rgbd|stereo> <sequence_name> [repeat_id]"
+  exit 1
 fi
 
-# Map to executable name
-case $choice in
-  1|train_colmap)   exe=train_colmap ;;
-  2|view_result)    exe=view_result ;;
-  3|replica_mono)   exe=replica_mono ;;
-  4|replica_rgbd)   exe=replica_rgbd ;;
-  5|tum_mono)       exe=tum_mono ;;
-  6|tum_rgbd)       exe=tum_rgbd ;;
-  7|euroc_stereo)   exe=euroc_stereo ;;
-  8|realsense_rgbd) exe=realsense_rgbd ;;
-  *) echo "Invalid selection: $choice"; exit 1 ;;
+GROUP=$1
+MODE=$2
+SEQ=$3
+ID=${4:-0}  # default to 0 if not provided
+
+# Sanitize casing
+GROUP=${GROUP,,}
+MODE=${MODE,,}
+SEQ=${SEQ,,}
+
+# Executable name
+EXE="${GROUP}_${MODE}"
+EXE_PATH="./install/photo-slam-ros/lib/photo-slam-ros/$EXE"
+
+# Config paths
+CFG_ROOT="./cfg"
+SEQ_ROOT="./data"
+
+ORB_CFG="$CFG_ROOT/ORB_SLAM3"
+MAP_CFG="$CFG_ROOT/gaussian_mapper"
+
+# Settings files
+case "$GROUP" in
+  tum)
+    ORB_YAML="$ORB_CFG/$( [ "$MODE" = "mono" ] && echo Monocular || echo RGB-D )/TUM/tum_${SEQ}.yaml"
+    MAP_YAML="$MAP_CFG/$( [ "$MODE" = "mono" ] && echo Monocular || echo RGB-D )/TUM/tum_${MODE}.yaml"
+    SEQ_PATH="/home/rapidlab/dataset/VSLAM/TUM/rgbd_dataset_${SEQ}"
+    ASSOC="$ORB_CFG/$( [ "$MODE" = "mono" ] && echo Monocular || echo RGB-D )/TUM/associations/tum_${SEQ}.txt"
+    OUT="$RESULTS_DIR/${EXE}_${ID}/rgbd_dataset_${SEQ}"
+    ;;
+  replica)
+    ORB_YAML="$ORB_CFG/$( [ "$MODE" = "mono" ] && echo Monocular || echo RGB-D )/Replica/${SEQ}.yaml"
+    MAP_YAML="$MAP_CFG/$( [ "$MODE" = "mono" ] && echo Monocular || echo RGB-D )/Replica/replica_${MODE}.yaml"
+    SEQ_PATH="$SEQ_ROOT/Replica/${SEQ}"
+    OUT="$RESULTS_DIR/${EXE}_${ID}/${SEQ}"
+    ;;
+  euroc)
+    ORB_YAML="$ORB_CFG/Stereo/EuRoC/EuRoC.yaml"
+    MAP_YAML="$MAP_CFG/Stereo/EuRoC/EuRoC.yaml"
+    SEQ_PATH="/home/rapidlab/dataset/VSLAM/EuRoC/${SEQ}"
+    ASSOC="$ORB_CFG/Stereo/EuRoC/EuRoC_TimeStamps/${SEQ/MH_/MH}.txt"
+    OUT="$RESULTS_DIR/${EXE}_${ID}/${SEQ}"
+    ;;
+  *)
+    echo "Unsupported group: $GROUP"
+    exit 1
+    ;;
 esac
 
-exe_path="./install/photo-slam-ros/lib/photo-slam-ros/$exe"
+# Print and run
+echo "========== Running $EXE =========="
+echo "$EXE_PATH"
+echo "Vocabulary: $VOCAB"
+echo "ORB Config: $ORB_YAML"
+echo "Mapper Config: $MAP_YAML"
+echo "Sequence: $SEQ_PATH"
+echo "Output: $OUT"
 
-# Fill args if not passed directly
-args="$@"
-if [[ -z "$args" ]]; then
-  if [[ "$exe" =~ ^(replica_mono|replica_rgbd|tum_mono|tum_rgbd|euroc_stereo|realsense_rgbd)$ ]]; then
-    echo "This executable requires 5–6 positional arguments:"
-    read -p "→ Path to vocabulary: " vocab
-    read -p "→ Path to ORB_SLAM3 settings: " orb_settings
-    read -p "→ Path to Gaussian mapper settings: " mapper_settings
-    read -p "→ Path to sequence (dataset): " sequence
-    read -p "→ Path to results output directory: " output_dir
-    read -p "→ Disable viewer? Type 'no_viewer' or leave blank: " viewer_opt
-    args="$vocab $orb_settings $mapper_settings $sequence $output_dir $viewer_opt"
-  elif [[ "$exe" == "train_colmap" ]]; then
-    echo "train_colmap requires 4 arguments:"
-    read -p "→ Path to COLMAP data directory: " colmap_data
-    read -p "→ Path to vocabulary: " vocab
-    read -p "→ Path to ORB_SLAM3 settings: " orb_settings
-    read -p "→ Path to output directory: " output_dir
-    args="$colmap_data $vocab $orb_settings $output_dir"
-  fi
+mkdir -p "$OUT"
+
+if [[ "$GROUP" == "euroc" ]]; then
+  echo "Associations: $ASSOC"
+  $EXE_PATH "$VOCAB" "$ORB_YAML" "$MAP_YAML" "$SEQ_PATH" "$ASSOC" "$OUT" "$VIEWER_FLAG"
+else
+  $EXE_PATH "$VOCAB" "$ORB_YAML" "$MAP_YAML" "$SEQ_PATH" "$OUT" "$VIEWER_FLAG"
 fi
-
-# Confirm and run
-echo "========== Executing =========="
-echo "$exe_path $args"
-chmod +x "$exe_path"
-$exe_path $args
