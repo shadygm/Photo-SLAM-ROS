@@ -223,6 +223,10 @@ GaussianMapper::GaussianMapper(std::shared_ptr<ORB_SLAM3::System> pSLAM,
   ros_publisher_ = std::make_shared<GaussianPublisher>(
       rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(
           true));
+  std::thread([this]() {
+    rclcpp::spin(ros_publisher_);
+  }).detach();
+
 }
 
 void GaussianMapper::readConfigFromFile(std::filesystem::path cfg_path) {
@@ -499,25 +503,45 @@ void GaussianMapper::run() {
 
   // Second loop: Incremental gaussian mapping
   int SLAM_stop_iter = 0;
+  int count = 0;
   while (!isStopped()) {
     // Check conditions for incremental mapping
     if (hasMetIncrementalMappingConditions()) {
       combineMappingOperations();
       if (cull_keyframes_)
         cullKeyframes();
-    }
-
-    // Invoke training once
-    trainForOneIteration();
-
-    if (pSLAM_->isShutDown()) {
-      SLAM_stop_iter = getIteration();
-      SLAM_ended_ = true;
-    }
-
-    if (SLAM_ended_ || getIteration() >= opt_params_.iterations_)
+      }
+      
+      // Invoke training once
+      trainForOneIteration();
+      
+      if (pSLAM_->isShutDown()) {
+        SLAM_stop_iter = getIteration();
+        SLAM_ended_ = true;
+      }
+      
+      if (SLAM_ended_ || getIteration() >= opt_params_.iterations_)
       break;
-    ros_publisher_->publishGaussianMap(gaussians_);
+      
+      // TODO: IMplement image rendering and publishing
+      // Sophus::SE3 currentPose = pSLAM_->getTracker()->mCurrentFrame.GetPose();
+      // int height = pSLAM_->getTracker()->mCurrentFrame.imgLeft.rows;
+      // int width = pSLAM_->getTracker()->mCurrentFrame.imgLeft.cols;
+
+      // // Pad width to multiple of 4
+      // int temp = width % 4;
+      // int padded_width = width + 4 - (temp == 0 ? 4 : temp);
+      cv::Mat slamImage = pSLAM_->getFrameDrawer()->DrawFrame(1.0f);
+      
+      
+      // auto rendered_image = renderFromPose(currentPose, padded_width, height, false);
+      // ros_publisher_->publishGaussianMap(gaussians_);
+      ros_publisher_->publishCVImage(slamImage);
+      if (count > 30) {
+        ros_publisher_->publishGaussians(gaussians_);
+        count = 0;
+      }
+      count++;
   }
 
   // Third loop: Tail gaussian optimization
@@ -688,6 +712,7 @@ void GaussianMapper::trainForOneIteration() {
 
   // Get rid of black edges caused by undistortion
   torch::Tensor masked_image = rendered_image * mask;
+  _rendered_image = masked_image.clone();
 
   // Loss
   auto Ll1 = loss_utils::l1_loss(masked_image, gt_image);
@@ -696,7 +721,6 @@ void GaussianMapper::trainForOneIteration() {
               lambda_dssim * (1.0 - loss_utils::ssim(masked_image, gt_image,
                                                      device_type_));
   loss.backward();
-
   torch::cuda::synchronize();
 
   {

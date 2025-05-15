@@ -1,7 +1,0 @@
-{
-  "package_name": "gaussian_interface",
-  "non_idl_tuples": [
-    "/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface:msg/SingleGaussian.msg",
-    "/home/shadygm/projects/Photo-SLAM-ROS/gaussian_interface:msg/GaussianArray.msg"
-  ]
-}

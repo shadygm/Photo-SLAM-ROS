@@ -1,28 +1,64 @@
 #!/bin/bash
 
+set -e
+
 echo "========== ROS 2 Build: Photo-SLAM-ROS =========="
 
-# Ask for build type
-read -p "Enter CMAKE_BUILD_TYPE (default: Release): " build_type
-build_type=${build_type:-Release}
+# Defaults
+BUILD_TYPE="Release"
+PARALLEL_WORKERS=$(nproc)
 
-# Ask for extra colcon arguments
-read -p "Enter extra colcon build args (e.g. --parallel-workers 8): " extra_args
-
-# Confirm
-echo ">>> Building with type: $build_type"
-echo ">>> Extra colcon args: $extra_args"
-
-# Clean old build if requested
-read -p "Clean build directory before building? (y/N): " clean
-if [[ "$clean" == "y" || "$clean" == "Y" ]]; then
+# Optional clean flag via arg
+if [[ "$1" == "clean" ]]; then
+    echo ">>> Cleaning build/install/log directories..."
     rm -rf build install log
-    echo ">>> Cleaned build/install/log folders"
+    shift
 fi
 
-# Build
+# === Build DBoW2 ===
+echo ">>> Building DBoW2..."
+cd ORB-SLAM3/Thirdparty/DBoW2
+mkdir -p build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+make -j$PARALLEL_WORKERS
+cd ../../g2o
+
+# === Build g2o ===
+echo ">>> Building g2o..."
+mkdir -p build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+make -j$PARALLEL_WORKERS
+cd ../../Sophus
+
+# === Build Sophus ===
+echo ">>> Building Sophus..."
+mkdir -p build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+make -j$PARALLEL_WORKERS
+
+# === Unpack ORB Vocabulary ===
+cd ../../../Vocabulary
+if [ ! -f ORBvoc.txt ]; then
+    echo ">>> Uncompressing ORB vocabulary..."
+    tar -xf ORBvoc.txt.tar.gz
+else
+    echo ">>> ORBvoc.txt already unpacked."
+fi
+
+pwd
+
+# === Build ORB-SLAM3 core ===
+echo ">>> Building ORB-SLAM3 core..."
+mkdir  -p ../build
+cd ../build
+cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+make -j$PARALLEL_WORKERS
+
+# === Build ROS workspace ===
+echo ">>> Building Photo-SLAM ROS workspace with colcon..."
+cd ../..
 colcon build --symlink-install \
-    --cmake-args -DCMAKE_BUILD_TYPE=$build_type \
-    $extra_args
+    --parallel-workers $PARALLEL_WORKERS \
+    --cmake-args -DCMAKE_BUILD_TYPE=$BUILD_TYPE "$@"
 
 echo "========== Build Complete =========="

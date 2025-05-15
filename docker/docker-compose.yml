@@ -10,9 +10,9 @@ services:
         HOSTNAME: ${HOSTNAME}
         USER_PASSWORD: ${USER_PASSWORD}
     image: photo-slam-ros:latest
-    network_mode: "host"
-    cpus: 8
-    mem_limit: 16g
+    network_mode: host
+    cpus: 16
+    mem_limit: 24g
     ipc: host
     pid: host
     user: "${USERNAME}:${USER_GID}"
@@ -27,7 +27,6 @@ services:
       - USER_GID=${USER_GID}
       - USERNAME=${USERNAME}
       - ROS_DOMAIN_ID=0
-      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
       - DISPLAY=unix${DISPLAY}
       - XAUTHORITY=${XAUTHORITY}
       - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}

@@ -234,6 +234,10 @@ public:
   std::map<camera_id_t, torch::Tensor> undistort_mask_;
   std::map<camera_id_t, torch::Tensor> viewer_main_undistort_mask_;
   std::map<camera_id_t, torch::Tensor> viewer_sub_undistort_mask_;
+  torch::Tensor _rendered_image;
+
+  // ROS setup
+  std::thread ros_spin_thread_;
 
 protected:
   // Parameters

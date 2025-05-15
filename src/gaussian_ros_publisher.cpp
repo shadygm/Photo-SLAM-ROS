@@ -1,93 +1,101 @@
 #include "include/gaussian_ros_publisher.h"
 #include "rclcpp_components/register_node_macro.hpp"
+#include <sstream> 
+
 
 GaussianPublisher::GaussianPublisher(const rclcpp::NodeOptions &options)
-    : Node("gaussian_publisher", options), running_(true) {
-  topic_name_ =
-      this->declare_parameter<std::string>("topic", "gaussiansblehbleh");
+    : Node("gaussian_publisher", options) {
+      topic_name_ = this->declare_parameter<std::string>("topic", "gaussians");
 
-  publisher_ = this->create_publisher<gaussian_interface::msg::GaussianArray>(
-      topic_name_, rclcpp::QoS(10));
+  image_publisher_ = this->create_publisher<sensor_msgs::msg::Image>(
+      "gaussian_image", rclcpp::QoS(10));
 
-  worker_thread_ = std::thread(&GaussianPublisher::publishingThread, this);
+  gaussian_publisher_ = this->create_publisher<gaussian_interface::msg::GaussianArray>(
+      "gaussian_model", rclcpp::QoS(10));
+
 }
 
 GaussianPublisher::~GaussianPublisher() {
-  running_ = false;
-  cv_.notify_all();
-  if (worker_thread_.joinable())
-    worker_thread_.join();
 }
 
-void GaussianPublisher::publishGaussianMap(
-    std::shared_ptr<GaussianModel> gaussians) {
-  {
-    std::lock_guard<std::mutex> lock(model_mutex_);
-    latest_model_ = gaussians;
+void GaussianPublisher::publishImage(torch::Tensor image) {
+  if (image.dim() == 3 && image.size(0) == 3) {
+    image = image.permute({1, 2, 0});
   }
-  cv_.notify_one(); // wake up thread to publish
+  image = image.contiguous().to(torch::kCPU).to(torch::kU8);
+
+  cv::Mat cv_image(image.size(0), image.size(1), CV_8UC3, image.data_ptr());
+  sensor_msgs::msg::Image img_msg;
+  img_msg.header.stamp = this->now();
+  img_msg.header.frame_id = "camera_frame";
+  img_msg.height = cv_image.rows;
+  img_msg.width = cv_image.cols;
+  img_msg.encoding = "bgr8";
+  img_msg.is_bigendian = false;
+  img_msg.step = static_cast<sensor_msgs::msg::Image::_step_type>(cv_image.step);
+  img_msg.data.assign(cv_image.datastart, cv_image.dataend);
+  image_publisher_->publish(img_msg);
 }
 
-void GaussianPublisher::publishingThread() {
-  while (running_) {
-    std::shared_ptr<GaussianModel> model_copy;
+void GaussianPublisher::publishCVImage(cv::Mat image) {
+  sensor_msgs::msg::Image img_msg;
+  img_msg.header.stamp = this->now();
+  img_msg.header.frame_id = "camera_frame";
+  img_msg.height = image.rows;
+  img_msg.width = image.cols;
+  img_msg.encoding = "bgr8";
+  img_msg.is_bigendian = false;
+  img_msg.step = static_cast<sensor_msgs::msg::Image::_step_type>(image.step);
+  img_msg.data.assign(image.datastart, image.dataend);
+  image_publisher_->publish(img_msg);
+}
 
-    {
-      std::unique_lock<std::mutex> lock(model_mutex_);
-      cv_.wait(lock, [&] { return !running_ || latest_model_; });
 
-      if (!running_)
-        break;
+void GaussianPublisher::publishGaussians(std::shared_ptr<GaussianModel> gaussians) {
+  // 1) grab everything on CPU, contiguous
+  auto xyz     = gaussians->getXYZ()                .to(torch::kCPU).contiguous(); // [N,3]
+  auto rot     = gaussians->getRotationActivation() .to(torch::kCPU).contiguous(); // [N,4]
+  auto scale   = gaussians->getScalingActivation()  .to(torch::kCPU).contiguous(); // [N,3]
+  auto opacity = gaussians->getOpacityActivation()  .to(torch::kCPU).contiguous(); // [N,1]
+  auto sh      = gaussians->getFeatures()           .to(torch::kCPU).contiguous(); // [N,16,3]
 
-      model_copy = latest_model_;
-      latest_model_.reset(); // Clear after consuming
+  const int64_t N = xyz.size(0);
+  const int64_t C = sh.size(1);
+  const int64_t K = sh.size(2);
+
+  gaussian_interface::msg::GaussianArray msg;
+  msg.gaussians.reserve(N);
+
+  for (int64_t i = 0; i < N; ++i) {
+    gaussian_interface::msg::SingleGaussian sg;
+
+    // fill position
+    sg.xyz.x = xyz[i][0].item<float>();
+    sg.xyz.y = xyz[i][1].item<float>();
+    sg.xyz.z = xyz[i][2].item<float>();
+
+    // fill quaternion
+    sg.rotation.x = rot[i][0].item<float>();
+    sg.rotation.y = rot[i][1].item<float>();
+    sg.rotation.z = rot[i][2].item<float>();
+    sg.rotation.w = rot[i][3].item<float>();
+
+    // fill scale
+    sg.scale.x = scale[i][0].item<float>();
+    sg.scale.y = scale[i][1].item<float>();
+    sg.scale.z = scale[i][2].item<float>();
+
+    // fill opacity (extract scalar from [1]-dim tensor)
+    sg.opacity = opacity[i][0].item<float>();
+
+    // flatten [C, K] into C*K floats
+    auto sh_ik = sh[i].view({C * K});  
+    sg.spherical_harmonics.reserve(C * K);
+    for (int64_t idx = 0; idx < C * K; ++idx) {
+      sg.spherical_harmonics.push_back(sh_ik[idx].item<float>());
     }
 
-    if (!model_copy || model_copy->xyz_.numel() == 0)
-      continue;
-
-    torch::NoGradGuard no_grad;
-
-    auto xyz_cpu = model_copy->xyz_.to(torch::kCPU);
-    auto rotation_cpu = model_copy->rotation_.to(torch::kCPU);
-    auto scaling_cpu = model_copy->scaling_.to(torch::kCPU);
-    auto opacity_cpu = model_copy->opacity_.to(torch::kCPU);
-    auto feats_dc_cpu = model_copy->features_dc_.to(torch::kCPU);
-    auto feats_rest_cpu = model_copy->features_rest_.to(torch::kCPU);
-
-    const int N = xyz_cpu.size(0);
-    auto sh_3d = torch::cat({feats_dc_cpu, feats_rest_cpu}, 1); // [N,16,3]
-    auto sh_flat = sh_3d.view({N, -1});                         // [N, 48]
-
-    gaussian_interface::msg::GaussianArray msg;
-    for (int i = 0; i < N; ++i) {
-      gaussian_interface::msg::SingleGaussian g;
-
-      g.xyz.x = xyz_cpu[i][0].item<float>();
-      g.xyz.y = xyz_cpu[i][1].item<float>();
-      g.xyz.z = xyz_cpu[i][2].item<float>();
-
-      g.rotation.w = rotation_cpu[i][0].item<float>();
-      g.rotation.x = rotation_cpu[i][1].item<float>();
-      g.rotation.y = rotation_cpu[i][2].item<float>();
-      g.rotation.z = rotation_cpu[i][3].item<float>();
-
-      g.opacity = opacity_cpu[i][0].item<float>();
-
-      g.scale.x = scaling_cpu[i][0].item<float>();
-      g.scale.y = scaling_cpu[i][1].item<float>();
-      g.scale.z = scaling_cpu[i][2].item<float>();
-
-      g.spherical_harmonics.reserve(sh_flat.size(1));
-      for (int k = 0; k < sh_flat.size(1); ++k) {
-        g.spherical_harmonics.push_back(sh_flat[i][k].item<float>());
-      }
-
-      msg.gaussians.push_back(std::move(g));
-    }
-
-    publisher_->publish(std::move(msg));
+    msg.gaussians.push_back(std::move(sg));
   }
+  gaussian_publisher_->publish(std::move(msg));
 }
-
-RCLCPP_COMPONENTS_REGISTER_NODE(GaussianPublisher)

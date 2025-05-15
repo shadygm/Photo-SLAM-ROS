@@ -157,6 +157,7 @@ ament_target_dependencies(gaussian_mapper
     geometry_msgs
     gaussian_interface
     rclcpp_components
+    sensor_msgs
 )
 
 add_library(gaussian_viewer SHARED
