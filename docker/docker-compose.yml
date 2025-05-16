@@ -22,6 +22,7 @@ services:
     working_dir: /home/${USERNAME}
     command: /bin/bash
     runtime: nvidia
+    privileged: true
     environment:
       - USER_UID=${USER_UID}
       - USER_GID=${USER_GID}
